@@ -32,6 +32,8 @@ class channel_event(commands.Cog):
         self.bot = bot
         self.channel_id = int(c_parser.get('Channel', 'id'))
 
+        
+
 
     @commands.Cog.listener()
     async def on_guild_channel_create(self, channel):
@@ -76,7 +78,6 @@ class channel_event(commands.Cog):
         Settings.set_channel_id(self.channel_id)
         
         await ctx.respond(f"Logging channel was set to {channel.name} - The channel was diretly updated.")
-
 
 
 def setup(bot):
